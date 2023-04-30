@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<center>
+    <div class="container">
+        <br>
+        <h2 class="my-3">Extract Stock Data through API: Date Wise</h2>
+        <br>
+        <div class="card border-dark my-3" style="width: 50%">
+            <div class="card-body">
+                <h5 class="card-title  my-3">Enter the date only</h5>
+                <form id="comp" onsubmit="clicked()">
+                    <div class="mb-3">
+                        <br>
+                        <input name="keywords" type=" text" class="form-control" id="dateInput"
+                            aria-describedby="emailHelp">
+                    </div>
+                    <button type="submit" class="btn btn-outline-dark my-3">Submit</button>
+                </form>
+                <p class="card-text text-muted">NOTE: - The format of input should be in the form of date only eg. 'Apr 03, 2023'</p>
+            </div>
+          </div>
+    </div>
+</center>
+
+    <script>
+        function clicked() {
+            var action_src = " http://127.0.0.1:8000/stock-date/" + document.getElementsByName("keywords")[0].value;
+            var your_form = document.getElementById('comp'); your_form.action = action_src;
+        } </script>
+
+
+                    {% endblock body %}
