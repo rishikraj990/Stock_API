@@ -3,31 +3,31 @@ from configparser import ConfigParser
 config = ConfigParser()
 
 config['COMPANIES1'] = {
-    'Name' : 'IBM',
+    'Name' : 'International Business Machines Corporation',
     'Code': 'IBM'
 }
 config['COMPANIES2'] = {
-    'Name' : 'CISCO',
+    'Name' : 'Cisco Systems, Inc.',
     'Code': 'CSCO'
 }
 config['COMPANIES3'] = {
-    'Name' : 'INTEL',
+    'Name' : 'Intel Corporation',
     'Code': 'INTC'
 }
 config['COMPANIES4'] = {
-    'Name' : 'ORACLE',
+    'Name' : 'Oracle Corporation',
     'Code': 'ORCL'
 }
 config['COMPANIES5'] = {
-    'Name' : 'WALLMART',
+    'Name' : 'Walmart Inc.',
     'Code': 'WMT'
 }
 config['COMPANIES6'] = {
-    'Name' : 'JOHNSON & JOHNSON',
+    'Name' : 'Johnson & Johnson',
     'Code': 'JNJ'
 }
 config['COMPANIES7'] = {
-    'Name' : 'ACCENTURE',
+    'Name' : 'Accenture plc',
     'Code': 'ACN'
 }
 

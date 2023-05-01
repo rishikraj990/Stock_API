@@ -1,7 +1,225 @@
 {% extends 'base.html' %}
 {% block body %}
 
+<div class="container-fluid" style="background-color: gainsboro;">
+    <center>
+        <br>
+        <br>
+        <h1 id="greetings" style="font-size: 600%;">
+        </h1>
+        <br>
+    </center>
+    <br>
+</div>
+<br>
+<div class="container">
+    <p class="text-justify" id="first">
+
+        Welcome to our API generator website, a project assigned by the esteemed
+        <a href="https://tsworks.io/" style="text-decoration:none" target="_blank">
+            <img src="/static/logo.png" style="width:8%;" alt="Tswork">
+        </a> company.
+        <br>
+        <br>
+        Our website is a powerful tool that can be used to scrape data from Yahoo! Finance of past 3 months and
+        generate API endpoints that can be queried based on three parameters.
+        <br>
 
 
+    </p>
+
+    <div class="container" style="background-color: gainsboro;">
+        <div class="container text-center">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card-wrapper">
+                            <center>
+                                <div class="card my-3" style="width: 25rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Firstly, our API can be queried based on a specific date.
+                                        </h5>
+                                        <br>
+                                        <h6 class="card-subtitle mb-2 text-body-secondary">All you need to do is input
+                                            the date
+                                            in
+                                            the format of 'Apr 03, 2023', and our API will return all the companies'
+                                            data for
+                                            that
+                                            particular
+                                            date.</h6>
+                                        <br>
+                                        <br>
+                                        <br>
+                                        <h9 class="card-text text-muted">You can easily check this by typing the
+                                            following
+                                            <br>URL:
+                                            https://hostaddress/stock-date/&lt;DATE>,
+                                            <br>where the example <br>URL: https://abc/stock-date/APR 03, 2023.
+                                        </h9>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card-wrapper">
+                            <center>
+                                <div class="card my-3" style="width: 25rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Secondly, you can query the API based on a company's name
+                                            and
+                                            date.</h5>
+                                        <br>
+                                        <h6 class="card-subtitle mb-2 text-body-secondary">Input the company code name
+                                            and date
+                                            in
+                                            the format of 'CSCO' and 'Apr 03, 2023,' respectively, and our API will
+                                            return the
+                                            particular company's data for that specific date.</h6>
+                                        <br>
+                                        <h9 class="card-text text-muted">You can check this by typing the following
+                                            <br>
+                                            URL: https://hostaddress/stock-date/&lt;COMPANY CODE>/&lt;DATE>, <br>where
+                                            the
+                                            example <br>URL: https://abc/s
+                                            tock-date/CSCO/APR 03, 2023.
+                                        </h9>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card-wrapper">
+                            <center>
+                                <div class="card my-3" style="width: 25rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Lastly, you can query the API based on a company's name.
+                                        </h5>
+                                        <br>
+                                        <h6 class="card-subtitle mb-2 text-body-secondary">Input the company code name
+                                            in the
+                                            format of 'CSCO,' and our API will return all the data of that particular
+                                            company.
+                                        </h6>
+                                        <h9 class="card-text text-muted">You can check this by typing the following
+                                            <br>
+                                            <br>
+                                            <br>
+                                            URL: https://hostaddress/stock-date/&lt;COMPANY CODE>, <br>
+                                            where the example
+                                            <br>
+                                            URL: https://abc/stock-date/CSCO.
+                                        </h9>
+                                    </div>
+                                </div>
+                            </center>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+    <center>
+        <div class="containers">
+            <div class="card" style="width: 50%;">
+                <div class="card-body">
+                    <h5 class="card-title"> Our website also allows anyone to update the data of the database by
+                        sending a POST/PATCH update request to the website.</h5>
+                    <br>
+                    <h9 class="card-text text-muted">The sample URL format is
+                        <br>
+                        "http://127.0.0.1:8000/stock-update/&lt;COMPANY CODE>/&lt;DATE>,"
+                        <br>
+                        and an example URL is
+                        <br>
+                        "http://127.0.0.1:8000/stock-update/IBM/Apr 03, 2023."
+                        <br>
+                        <br>
+                        However, please note that only existing rows in the database can be updated.
+                    </h9>
+                </div>
+            </div>
+        </div>
+        <br>
+
+    </center>
+
+    <p>
+        <br>
+        To add more company data, you can update config file. Our Application runs in the following
+        sequence:
+        <br>
+        config.py -> assign.py -> app.py.
+        <br>
+        <br>
+        Lastly, our website continuously displays all the company names whose data is present, making it
+        easy for you to find the data you need.
+        <br>
+        <br>
+        Our website is written using a combination of Python, Flask, SQLite, HTML, JavaScript, and Bootstrap, making
+        it a versatile and powerful tool for anyone in need of up-to-date financial data. Thank you for choosing our
+        website, and we hope you find it useful!
+        <br>
+        <br>
+        You can find more about me on my Social media handle:)
+        <a href="https://www.linkedin.com/in/rishik-raj-44a2ab165/" target="_blank"><img
+            src="https://static.vecteezy.com/system/resources/previews/018/930/587/original/linkedin-logo-linkedin-icon-transparent-free-png.png"
+            style="width:4%;" alt="LinkedIn"></a>
+        <a href="" target="_blank"><img src="https://www.iconpacks.net/icons/2/free-attachment-icon-1483-thumb.png"
+                style="width:2.5%;" alt="Resume"></a>
+    </p>
+    <br>
+    <br>
+</div>
+<style>
+    p::first-letter {
+        font-size: 200%;
+        color: grey;
+    }
+
+    p {
+        font-size: x-large;
+    }
+</style>
+
+<script>
+    var myDate = new Date();
+    var hrs = myDate.getHours();
+
+    var greet;
+
+    if (hrs < 12)
+        greet = 'Hi, Good Morning';
+    else if (hrs >= 12 && hrs < 17)
+        greet = 'Hi, Good Afternoon';
+    else if (hrs >= 17 && hrs <= 24)
+        greet = 'Hi, Good Evening';
+
+    document.getElementById('greetings').innerHTML = '<b>' + greet + '</b>';
+</script>
 
 {% endblock body %}
