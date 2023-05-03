@@ -1,93 +1,111 @@
+<!--Inherit the base file-->
 {% extends 'base.html' %}
 {% block body %}
 
 <div class="container">
   <div class="container text-center">
     <h2 class="my-3">Extract Stock Data through API:</h2>
+
+    <!--Display all the feature of the website-->
     <div class="row">
+
+      <!--Feature 1-->
       <div class="col">
         <center>
-        <div class="card my-3 h-100" style="width: 20rem;">
-          <div class="card-body">
-            <h5 class="card-title">By Date</h5>
-            <br>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Get all companies’ stock data for a particular day</h6>
-            <p class="card-text text-muted">(Input to API would be date)</p>
-            <br>
-            <a class="btn btn-outline-dark" href="/stock-date" role="button">Click Here</a>
+          <div class="card my-3 h-100" style="width: 20rem;">
+            <div class="card-body">
+              <h5 class="card-title">By Date</h5>
+              <br>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Get all companies’ stock data for a particular day</h6>
+              <p class="card-text text-muted">(Input to API would be date)</p>
+              <br>
+              <a class="btn btn-outline-dark" href="/stock-date" role="button">Click Here</a>
+            </div>
           </div>
-        </div>
-      </center>
+        </center>
       </div>
+
+      <!--Feature 2-->
       <div class="col">
-      <center>
-        <div class="card my-3" style="width: 20rem;">
-          <div class="card-body">
-            <h5 class="card-title">By Company name and Date</h5>
-            <br>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Get all stock data for a particular company for a particular day</h6>
-            <p class="card-text text-muted">(Input to API would be company name and date)</p>
-            <a class="btn btn-outline-dark" href="/stock-date-company" role="button">Click Here</a>
+        <center>
+          <div class="card my-3" style="width: 20rem;">
+            <div class="card-body">
+              <h5 class="card-title">By Company name and Date</h5>
+              <br>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Get all stock data for a particular company for a
+                particular day</h6>
+              <p class="card-text text-muted">(Input to API would be company name and date)</p>
+              <a class="btn btn-outline-dark" href="/stock-date-company" role="button">Click Here</a>
+            </div>
           </div>
-        </div>
-      </center>
+        </center>
       </div>
+
+      <!--Feature 3-->
       <div class="col">
-      <center>
-        <div class="card my-3" style="width: 20rem;">
-          <div class="card-body">
-            <h5 class="card-title">By Company name</h5>
-            <br>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Get all stock data for a particular company</h6>
-            <p class="card-text text-muted">(Input to API would be company name)</p>
-            <br>  
-            <a class="btn btn-outline-dark" href="/stock-company" role="button">Click Here</a>
+        <center>
+          <div class="card my-3" style="width: 20rem;">
+            <div class="card-body">
+              <h5 class="card-title">By Company name</h5>
+              <br>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Get all stock data for a particular company</h6>
+              <p class="card-text text-muted">(Input to API would be company name)</p>
+              <br>
+              <a class="btn btn-outline-dark" href="/stock-company" role="button">Click Here</a>
+            </div>
           </div>
-        </div>
-      </center>
+        </center>
       </div>
     </div>
   </div>
 </div>
-  
-  <br>
-  <br>
-  <center>
-    <div class="containers">
-      <div class="card" style="width: 50%;">
-        <div class="card-body">
-          <h5 class="card-title">POST/Patch update</h5>
-          <br>
-          <h6 class="card-subtitle mb-2 text-body-secondary">POST/Patch API to update stock data for a company by date.</h6>
-          <p class="card-text text-muted">URL = "http://127.0.0.1:8000/stock-update/&lt;COMPANY>/&lt;DATE>"<br>Example URL = "http://127.0.0.1:8000/stock-update/IBM/Apr 03, 2023"</p>
-        </div>
+
+<br>
+<br>
+
+<!--Feature 4-->
+<center>
+  <div class="containers">
+    <div class="card" style="width: 50%;">
+      <div class="card-body">
+        <h5 class="card-title">POST/Patch update</h5>
+        <br>
+        <h6 class="card-subtitle mb-2 text-body-secondary">POST/Patch API to update stock data for a company by date.
+        </h6>
+        <p class="card-text text-muted">URL = "http://Domain-Name/stock-update/&lt;COMPANY>/&lt;DATE>"<br>Example URL =
+          "http://127.0.0.1:8000/stock-update/IBM/Apr 03, 2023"</p>
       </div>
     </div>
-    <br>
-
-  </center>
-  
-  <div class="container text-center">
-    <h2 class="my-3">All companie's whose data is available</h2>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">SL No.</th>
-          <th scope="col">Company Name</th>
-          <th scope="col">Company Code</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for company in actualContain %}
-			<tr>
-				<td>{{ loop.index }}</td>
-				<td>{{ company['name'] }}</td>
-				<td>{{ company['code'] }}</td>
-			</tr>
-			{% endfor %}
-      </tbody>
-    </table>
   </div>
   <br>
 
+</center>
+
+<!--Display company details table-->
+<div class="container text-center">
+  <h2 class="my-3">All companie's whose data is available</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">SL No.</th>
+        <th scope="col">Company Name</th>
+        <th scope="col">Company Code</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!--For loop to display all company Details-->
+      {% for company in actualContain %}
+      <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ company['name'] }}</td>
+        <td>{{ company['code'] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<br>
+
+<!--Inherit the base file-->
 {% endblock body %}

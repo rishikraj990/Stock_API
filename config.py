@@ -1,9 +1,13 @@
 from configparser import ConfigParser
 
+# Initaialize the library
 config = ConfigParser()
 
-config['COMPANIES1'] = {
+# Create Section
+config['COMPANIES1'] = {   
+    # Name
     'Name' : 'International Business Machines Corporation',
+    # Code name
     'Code': 'IBM'
 }
 config['COMPANIES2'] = {
@@ -31,5 +35,6 @@ config['COMPANIES7'] = {
     'Code': 'ACN'
 }
 
+#open a config file and write in it
 with open("config.ini", "w") as configfile:
     config.write(configfile)

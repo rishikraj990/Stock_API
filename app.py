@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify    # Import flask
 import sqlite3
 from configparser import ConfigParser
 
+# Initializing application name as 'app'
 app = Flask(__name__)
 
 # Load config file
@@ -12,6 +13,7 @@ companiesDetail = []
 for section in config.sections():
     name = config.get(section, 'name')
     code = config.get(section, 'code')
+    # companyDetails contains both name as well as code name of the company
     companiesDetail.append({'name': name, 'code': code})
 
 # Connect to the database
@@ -19,17 +21,18 @@ conn = sqlite3.connect('finance.db')
 
 # Query the data from the database
 cursor = conn.execute('''SELECT DISTINCT company FROM finance;''')
-rows = cursor.fetchall()
+rows = cursor.fetchall()             # rows contains all the distinct company code name present in database
 
 # Close the connection
 conn.close()
 
+# If code name is present in database (rows) then add the details in the website by taking it from config file
 actualContain = [x for x in companiesDetail if x['code'] in [i[0] for i in rows]]
 
 # Render front page of the website
 @app.route('/')
 def index():
-    return render_template('index.html', actualContain=actualContain)
+    return render_template('index.html', actualContain=actualContain)  # actualContain will be used to display table
 
 # Render about page of the website
 @app.route('/about/')
@@ -142,7 +145,7 @@ def get_stock_data_by_company(company):
     return jsonify(data)
 
 
-# Endpoint to update stock data for a company by date
+# Endpoint to update stock data for a company by date using POST/PATCH methods
 @app.route('/stock-update/<company>/<date>', methods=['POST', 'PATCH'])
 def update_stock_data_by_company_and_date(company, date):
     # Connect to the database
@@ -171,4 +174,5 @@ def update_stock_data_by_company_and_date(company, date):
 
 if __name__ == "__main__":
     app.run(debug=True, port=8000)
+    #debug=True shows error in command line only
     #port number is specified at 8000

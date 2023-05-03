@@ -1,6 +1,8 @@
+<!--Inherit the base file-->
 {% extends 'base.html' %}
 {% block body %}
 
+<!--For showing Greeting with current Time-->
 <div class="container-fluid" style="background-color: gainsboro;">
     <center>
         <br>
@@ -13,6 +15,8 @@
 </div>
 <br>
 <div class="container">
+
+    <!--Main block containg about-->
     <p class="text-justify" id="first">
 
         Welcome to our API generator website, a project assigned by the esteemed
@@ -28,6 +32,7 @@
 
     </p>
 
+    <!--Carousel containing features-->
     <div class="container" style="background-color: gainsboro;">
         <div class="container text-center">
             <div id="carouselExampleDark" class="carousel carousel-dark slide">
@@ -39,69 +44,69 @@
                     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
                         aria-label="Slide 3"></button>
                 </div>
+
+                <!--Feature 1-->
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="card-wrapper">
                             <center>
-                                <div class="card my-3" style="width: 25rem;">
+                                <div class="card my-3" style="width: 30rem;">
                                     <div class="card-body">
                                         <h5 class="card-title">Firstly, our API can be queried based on a specific date.
                                         </h5>
                                         <br>
                                         <h6 class="card-subtitle mb-2 text-body-secondary">All you need to do is input
-                                            the date
-                                            in
-                                            the format of 'Apr 03, 2023', and our API will return all the companies'
-                                            data for
-                                            that
-                                            particular
-                                            date.</h6>
-                                        <br>
+                                            the date in the format of 'Apr 03, 2023', and our API will return
+                                            all the companies' data for that particular date.</h6>
                                         <br>
                                         <br>
                                         <h9 class="card-text text-muted">You can easily check this by typing the
                                             following
-                                            <br>URL:
-                                            https://hostaddress/stock-date/&lt;DATE>,
-                                            <br>where the example <br>URL: https://abc/stock-date/APR 03, 2023.
+                                            <br>
+                                            URL: http://Domain-Name/stock-date/&lt;DATE>,
+                                            <br>
+                                            where the example
+                                            <br>
+                                            URL: http://127.0.0.1:8000/stock-date/APR 03, 2023.
                                         </h9>
                                     </div>
                                 </div>
                             </center>
                         </div>
                     </div>
+
+                    <!--Feature 2-->
                     <div class="carousel-item">
                         <div class="card-wrapper">
                             <center>
-                                <div class="card my-3" style="width: 25rem;">
+                                <div class="card my-3" style="width: 30rem;">
                                     <div class="card-body">
-                                        <h5 class="card-title">Secondly, you can query the API based on a company's name
-                                            and
-                                            date.</h5>
+                                        <h5 class="card-title">Secondly, you can query the API based on a
+                                            company's name and date.</h5>
                                         <br>
-                                        <h6 class="card-subtitle mb-2 text-body-secondary">Input the company code name
-                                            and date
-                                            in
-                                            the format of 'CSCO' and 'Apr 03, 2023,' respectively, and our API will
-                                            return the
-                                            particular company's data for that specific date.</h6>
+                                        <h6 class="card-subtitle mb-2 text-body-secondary">Input the company
+                                            code name and date in the format of 'CSCO' and 'Apr 03, 2023,'
+                                            respectively, and our API will return the particular company's
+                                            data for that specific date.</h6>
                                         <br>
                                         <h9 class="card-text text-muted">You can check this by typing the following
                                             <br>
-                                            URL: https://hostaddress/stock-date/&lt;COMPANY CODE>/&lt;DATE>, <br>where
-                                            the
-                                            example <br>URL: https://abc/s
-                                            tock-date/CSCO/APR 03, 2023.
+                                            URL: http://Domain-Name/stock-date/&lt;COMPANY CODE>/&lt;DATE>,
+                                            <br>
+                                            where the example
+                                            <br>URL: http://127.0.0.1:8000/stock-date/CSCO/APR 03, 2023.
                                         </h9>
                                     </div>
                                 </div>
                             </center>
                         </div>
                     </div>
+
+                    <!--Feature 3-->
                     <div class="carousel-item">
                         <div class="card-wrapper">
                             <center>
-                                <div class="card my-3" style="width: 25rem;">
+                                <div class="card my-3" style="width: 30rem;">
                                     <div class="card-body">
                                         <h5 class="card-title">Lastly, you can query the API based on a company's name.
                                         </h5>
@@ -111,14 +116,16 @@
                                             format of 'CSCO,' and our API will return all the data of that particular
                                             company.
                                         </h6>
+                                        <br>
+                                        <br>
+                                        <br>
                                         <h9 class="card-text text-muted">You can check this by typing the following
                                             <br>
+                                            URL: http://Domain-Name/stock-date/&lt;COMPANY CODE>,
                                             <br>
-                                            <br>
-                                            URL: https://hostaddress/stock-date/&lt;COMPANY CODE>, <br>
                                             where the example
                                             <br>
-                                            URL: https://abc/stock-date/CSCO.
+                                            URL: http://127.0.0.1:8000/stock-date/CSCO.
                                         </h9>
                                     </div>
                                 </div>
@@ -144,6 +151,8 @@
     <br>
     <br>
     <center>
+
+        <!--Feature 4-->
         <div class="containers">
             <div class="card" style="width: 50%;">
                 <div class="card-body">
@@ -152,7 +161,7 @@
                     <br>
                     <h9 class="card-text text-muted">The sample URL format is
                         <br>
-                        "http://127.0.0.1:8000/stock-update/&lt;COMPANY CODE>/&lt;DATE>,"
+                        "http://Domain-Name/stock-update/&lt;COMPANY CODE>/&lt;DATE>,"
                         <br>
                         and an example URL is
                         <br>
@@ -186,15 +195,20 @@
         <br>
         <br>
         You can find more about me on my Social media handle:)
-        <a href="https://www.linkedin.com/in/rishik-raj-44a2ab165/" target="_blank"><img
-            src="https://static.vecteezy.com/system/resources/previews/018/930/587/original/linkedin-logo-linkedin-icon-transparent-free-png.png"
-            style="width:4%;" alt="LinkedIn"></a>
-        <a href="" target="_blank"><img src="https://www.iconpacks.net/icons/2/free-attachment-icon-1483-thumb.png"
-                style="width:2.5%;" alt="Resume"></a>
+
+        <!--Adding social media links-->
+        <a href="https://www.linkedin.com/in/rishik-raj-44a2ab165/" style="text-decoration:none" target="_blank">
+            <img src="/static/linkedin.jpg" style="width:4%;" alt="LinkedIn">
+        </a>
+        <a href="" style="text-decoration:none" target="_blank">
+            <img src="/static/attachment.png" style="width:2.5%;" alt="Resume">
+        </a>
     </p>
     <br>
     <br>
 </div>
+
+<!--CSS for some attribute-->
 <style>
     p::first-letter {
         font-size: 200%;
@@ -206,10 +220,10 @@
     }
 </style>
 
+<!--JavaScript code to get the current Greeting-->
 <script>
     var myDate = new Date();
     var hrs = myDate.getHours();
-
     var greet;
 
     if (hrs < 12)
@@ -222,4 +236,5 @@
     document.getElementById('greetings').innerHTML = '<b>' + greet + '</b>';
 </script>
 
+<!--Inherit the base file-->
 {% endblock body %}
