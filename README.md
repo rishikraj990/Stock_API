@@ -27,12 +27,19 @@ To install and run the project, follow these steps:
 
 Once the web application is running, you can access the home page, API endpoints, and about page by clicking the respective links in the navigation bar. To make an API call, use the endpoint URLs listed in the API Endpoints section below.
 
-Home Page
-![plot](./directory_1/directory_2/.../directory_n/plot.png)
+Home Page 
+
+<img src="./Photo/1.jpg" width="50%" height="50%">
+
 API Calling Page
-![plot](./directory_1/directory_2/.../directory_n/plot.png)
+
+<img src="./Photo/2.png" width="50%" height="50%"><img src="./Photo/3.png" width="50%" height="50%">
+<img src="./Photo/4.jpg" width="50%" height="50%"><img src="./Photo/5.png" width="50%" height="50%">
+<img src="./Photo/6.jpg" width="50%" height="50%"><img src="./Photo/7.png" width="50%" height="50%">
+
 About Page
-![plot](./directory_1/directory_2/.../directory_n/plot.png)
+
+<img src="./Photo/8.jpg" width="50%" height="50%">
 
 ## API Endpoints
 
